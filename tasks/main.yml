@@ -10,3 +10,9 @@
   include_tasks: sshconfig.yml
   become: true
   become_user: bitroidapps
+
+- name: Ensure to create directory structure
+  include_tasks: pathconfig.yml
+
+- name: Ensure to grant permissions
+  include_tasks: perms.yml

@@ -1,0 +1,96 @@
+---
+- name: Set ACL for bitroidapps user and group on /bitroidapps/apps/bin
+  ansible.posix.acl:
+    path: /bitroidapps/apps/bin
+    entity: bitroidapps
+    etype: user
+    permissions: rwx
+    state: present
+
+- name: Set ACL for bitroidapps group on /bitroidapps/apps/bin
+  ansible.posix.acl:
+    path: /bitroidapps/apps/bin
+    entity: bitroidapps
+    etype: group
+    permissions: rx
+    state: present
+
+- name: Set ACL for bitroidapps user on /bitroidapps/apps/logs
+  ansible.posix.acl:
+    path: /bitroidapps/apps/logs
+    entity: bitroidapps
+    etype: user
+    permissions: rwx
+    state: present
+
+- name: Set ACL for bitroidapps group on /bitroidapps/apps/logs
+  ansible.posix.acl:
+    path: /bitroidapps/apps/logs
+    entity: bitroidapps
+    etype: group
+    permissions: rx
+    state: present
+
+- name: Set ACL for bitroidapps user on /bitroidapps/apps/archivals
+  ansible.posix.acl:
+    path: /bitroidapps/apps/archivals
+    entity: bitroidapps
+    etype: user
+    permissions: rwx
+    state: present
+
+- name: Set ACL for bitroidapps group on /bitroidapps/apps/archivals
+  ansible.posix.acl:
+    path: /bitroidapps/apps/archivals
+    entity: bitroidapps
+    etype: group
+    permissions: rx
+    state: present
+
+- name: Set ACL for bitroidsupp user on /bitroidapps/apps/bin
+  ansible.posix.acl:
+    path: /bitroidapps/apps/bin
+    entity: bitroidsupp
+    etype: user
+    permissions: rx
+    state: present
+
+- name: Set ACL for bitroidsupp group on /bitroidapps/apps/bin
+  ansible.posix.acl:
+    path: /bitroidapps/apps/bin
+    entity: bitroidsupp
+    etype: group
+    permissions: rx
+    state: present
+
+- name: Set ACL for bitroidsupp user on /bitroidapps/apps/logs
+  ansible.posix.acl:
+    path: /bitroidapps/apps/logs
+    entity: bitroidsupp
+    etype: user
+    permissions: rx
+    state: present
+
+- name: Set ACL for bitroidsupp group on /bitroidapps/apps/logs
+  ansible.posix.acl:
+    path: /bitroidapps/apps/logs
+    entity: bitroidsupp
+    etype: group
+    permissions: rx
+    state: present
+
+- name: Set ACL for bitroidsupp user on /bitroidapps/apps/archivals
+  ansible.posix.acl:
+    path: /bitroidapps/apps/archivals
+    entity: bitroidsupp
+    etype: user
+    permissions: rx
+    state: present
+
+- name: Set ACL for bitroidsupp group on /bitroidapps/apps/archivals
+  ansible.posix.acl:
+    path: /bitroidapps/apps/archivals
+    entity: bitroidsupp
+    etype: group
+    permissions: rx
+    state: present
