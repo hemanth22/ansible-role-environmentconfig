@@ -1,0 +1,30 @@
+---
+- name: create group
+  ansible.builtin.group:
+    name: bitroidapps
+    state: present
+
+- name: Create user with home and bash shell
+  ansible.builtin.user:
+    name: bitroidapps
+    group: bitroidapps
+    home: /home/bitroidapps
+    shell: /bin/bash
+    state: present
+    create_home: true
+    password: "{{ testCredentials | password_hash('sha512') }}"
+
+- name: create group2
+  ansible.builtin.group:
+    name: bitroidsupp
+    state: present
+
+- name: Create user2 with home and bash shell
+  ansible.builtin.user:
+    name: bitroidsupp
+    group: bitroidsupp
+    home: /home/bitroidsupp
+    shell: /bin/bash
+    state: present
+    create_home: true
+    password: "{{ testCredentials2 | password_hash('sha512') }}"

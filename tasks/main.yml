@@ -1,3 +1,12 @@
-#SPDX-License-Identifier: MIT-0
 ---
-# tasks file for hemanth22.environmentconfig
+- name: Execution details of ansible
+  ansible.builtin.debug:
+    msg: "Executing as {{ ansible_user_id }} in server {{ ansible_hostname }}"
+
+- name: Ensure to create user
+  include_tasks: createuser.yml
+
+- name: Ensure to configure SSH
+  include_tasks: sshconfig.yml
+  become: true
+  become_user: bitroidapps

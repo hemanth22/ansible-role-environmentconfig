@@ -1,0 +1,44 @@
+---
+- name: Create SSH directory
+  ansible.builtin.file:
+    path: "/home/{{ ansible_user_id }}/.ssh"
+    state: directory
+    mode: '0700'
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_id }}"
+
+- name: Create empty known_hosts file
+  ansible.builtin.copy:
+    dest: "/home/{{ ansible_user_id }}/.ssh/known_hosts"
+    content: ""
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_id }}"
+    mode: '0644'
+    force: false
+
+- name: Create empty authorized_keys file
+  ansible.builtin.copy:
+    dest: "/home/{{ ansible_user_id }}/.ssh/authorized_keys"
+    content: ""
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_id }}"
+    mode: '0644'
+    force: false
+
+- name: Create empty .bashrc file
+  ansible.builtin.copy:
+    dest: "/home/{{ ansible_user_id }}/.bashrc"
+    content: ""
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_id }}"
+    mode: '0644'
+    force: false
+
+- name: Create empty fstab file
+  ansible.builtin.copy:
+    dest: "/etc/fstab"
+    content: ""
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_id }}"
+    mode: '0644'
+    force: false
