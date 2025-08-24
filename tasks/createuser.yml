@@ -13,6 +13,11 @@
     state: present
     create_home: true
     password: "{{ testCredentials | password_hash('sha512') }}"
+  register: create_appuser_result
+
+- name: Debug user creation result for appuser
+  ansible.builtin.debug:
+    var: create_appuser_result
 
 - name: create group2
   ansible.builtin.group:
@@ -28,3 +33,7 @@
     state: present
     create_home: true
     password: "{{ testCredentials2 | password_hash('sha512') }}"
+
+- name: Debug user2 creation result for suppuser
+  ansible.builtin.debug:
+    var: create_suppuser_result
