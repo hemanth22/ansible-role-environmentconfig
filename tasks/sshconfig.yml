@@ -44,11 +44,10 @@
 
 - name: Create empty fstab file
   become: true
-  become_user: "{{ appuser }}"
   ansible.builtin.copy:
     dest: "/etc/fstab"
     content: ""
-    owner: "{{ appuser }}"
-    group: "{{ appuser }}"
+    owner: "root"
+    group: "root"
     mode: '0644'
     force: false
