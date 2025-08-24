@@ -1,6 +1,7 @@
 ---
 galaxy_info:
-  author: environmentconfig
+  role_name: environmentconfig
+  author: hemanth22
   description: This ansible role is created to custom environment to test variable ansible roles.
   issue_tracker_url: https://github.com/hemanth22/ansible-role-environmentconfig/issues
   license: GPL-3.0-only
