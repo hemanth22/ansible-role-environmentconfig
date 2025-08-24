@@ -1,14 +1,14 @@
 ---
 - name: create group
   ansible.builtin.group:
-    name: bitroidapps
+    name: "{{ appuser }}"
     state: present
 
 - name: Create user with home and bash shell
   ansible.builtin.user:
-    name: bitroidapps
-    group: bitroidapps
-    home: /home/bitroidapps
+    name: "{{ appuser }}"
+    group: "{{ appuser }}"
+    home: /home/"{{ appuser }}"
     shell: /bin/bash
     state: present
     create_home: true
@@ -16,14 +16,14 @@
 
 - name: create group2
   ansible.builtin.group:
-    name: bitroidsupp
+    name: "{{ suppuser }}"
     state: present
 
 - name: Create user2 with home and bash shell
   ansible.builtin.user:
-    name: bitroidsupp
-    group: bitroidsupp
-    home: /home/bitroidsupp
+    name: "{{ suppuser }}"
+    group: "{{ suppuser }}"
+    home: /home/"{{ suppuser }}"
     shell: /bin/bash
     state: present
     create_home: true

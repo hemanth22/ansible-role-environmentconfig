@@ -1,5 +1,7 @@
 ---
 - name: Create SSH directory
+  become: true
+  become_user: "{{ appuser }}"
   ansible.builtin.file:
     path: "/home/{{ ansible_user_id }}/.ssh"
     state: directory
@@ -8,6 +10,8 @@
     group: "{{ ansible_user_id }}"
 
 - name: Create empty known_hosts file
+  become: true
+  become_user: "{{ appuser }}"
   ansible.builtin.copy:
     dest: "/home/{{ ansible_user_id }}/.ssh/known_hosts"
     content: ""
@@ -17,6 +21,8 @@
     force: false
 
 - name: Create empty authorized_keys file
+  become: true
+  become_user: "{{ appuser }}"
   ansible.builtin.copy:
     dest: "/home/{{ ansible_user_id }}/.ssh/authorized_keys"
     content: ""
@@ -26,6 +32,8 @@
     force: false
 
 - name: Create empty .bashrc file
+  become: true
+  become_user: "{{ appuser }}"
   ansible.builtin.copy:
     dest: "/home/{{ ansible_user_id }}/.bashrc"
     content: ""
@@ -35,6 +43,8 @@
     force: false
 
 - name: Create empty fstab file
+  become: true
+  become_user: "{{ appuser }}"
   ansible.builtin.copy:
     dest: "/etc/fstab"
     content: ""

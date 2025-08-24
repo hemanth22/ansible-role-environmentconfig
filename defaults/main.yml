@@ -1,3 +1,5 @@
 ---
+appuser: "bitroidapps"
+suppuser: "bitroidsupp"
 testCredentials: "bitroidapps"
 testCredentials2: "bitroidsupp"
