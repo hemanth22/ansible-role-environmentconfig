@@ -3,20 +3,20 @@
   become: true
   become_user: "{{ appuser }}"
   ansible.builtin.file:
-    path: "/home/{{ ansible_user_id }}/.ssh"
+    path: "/home/{{ appuser }}/.ssh"
     state: directory
     mode: '0700'
-    owner: "{{ ansible_user_id }}"
-    group: "{{ ansible_user_id }}"
+    owner: "{{ appuser }}"
+    group: "{{ appuser }}"
 
 - name: Create empty known_hosts file
   become: true
   become_user: "{{ appuser }}"
   ansible.builtin.copy:
-    dest: "/home/{{ ansible_user_id }}/.ssh/known_hosts"
+    dest: "/home/{{ appuser }}/.ssh/known_hosts"
     content: ""
-    owner: "{{ ansible_user_id }}"
-    group: "{{ ansible_user_id }}"
+    owner: "{{ appuser }}"
+    group: "{{ appuser }}"
     mode: '0644'
     force: false
 
@@ -24,10 +24,10 @@
   become: true
   become_user: "{{ appuser }}"
   ansible.builtin.copy:
-    dest: "/home/{{ ansible_user_id }}/.ssh/authorized_keys"
+    dest: "/home/{{ appuser }}/.ssh/authorized_keys"
     content: ""
-    owner: "{{ ansible_user_id }}"
-    group: "{{ ansible_user_id }}"
+    owner: "{{ appuser }}"
+    group: "{{ appuser }}"
     mode: '0644'
     force: false
 
@@ -35,10 +35,10 @@
   become: true
   become_user: "{{ appuser }}"
   ansible.builtin.copy:
-    dest: "/home/{{ ansible_user_id }}/.bashrc"
+    dest: "/home/{{ appuser }}/.bashrc"
     content: ""
-    owner: "{{ ansible_user_id }}"
-    group: "{{ ansible_user_id }}"
+    owner: "{{ appuser }}"
+    group: "{{ appuser }}"
     mode: '0644'
     force: false
 
@@ -48,7 +48,7 @@
   ansible.builtin.copy:
     dest: "/etc/fstab"
     content: ""
-    owner: "{{ ansible_user_id }}"
-    group: "{{ ansible_user_id }}"
+    owner: "{{ appuser }}"
+    group: "{{ appuser }}"
     mode: '0644'
     force: false
