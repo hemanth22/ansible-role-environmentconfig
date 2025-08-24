@@ -8,7 +8,7 @@
   ansible.builtin.user:
     name: "{{ appuser }}"
     group: "{{ appuser }}"
-    home: /home/"{{ appuser }}"
+    home: "/home/{{ appuser }}"
     shell: /bin/bash
     state: present
     create_home: true
@@ -28,7 +28,7 @@
   ansible.builtin.user:
     name: "{{ suppuser }}"
     group: "{{ suppuser }}"
-    home: /home/"{{ suppuser }}"
+    home: "/home/{{ suppuser }}"
     shell: /bin/bash
     state: present
     create_home: true
