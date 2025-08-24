@@ -33,6 +33,7 @@
     state: present
     create_home: true
     password: "{{ testCredentials2 | password_hash('sha512') }}"
+  register: create_suppuser_result
 
 - name: Debug user2 creation result for suppuser
   ansible.builtin.debug:
