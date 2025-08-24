@@ -1,96 +1,96 @@
 ---
-- name: Set ACL for bitroidapps user and group on /bitroidapps/apps/bin
+- name: Set ACL for {{ appuser }} user and group on /{{ appuser }}/apps/bin
   ansible.posix.acl:
-    path: /bitroidapps/apps/bin
-    entity: bitroidapps
+    path: "/{{ appuser }}/apps/bin"
+    entity: "{{ appuser }}"
     etype: user
     permissions: rwx
     state: present
 
-- name: Set ACL for bitroidapps group on /bitroidapps/apps/bin
+- name: Set ACL for {{ appuser }} group on /{{ appuser }}/apps/bin
   ansible.posix.acl:
-    path: /bitroidapps/apps/bin
-    entity: bitroidapps
+    path: "/{{ appuser }}/apps/bin"
+    entity: "{{ appuser }}"
     etype: group
     permissions: rx
     state: present
 
-- name: Set ACL for bitroidapps user on /bitroidapps/apps/logs
+- name: Set ACL for {{ appuser }} user on /{{ appuser }}/apps/logs
   ansible.posix.acl:
-    path: /bitroidapps/apps/logs
-    entity: bitroidapps
+    path: "/{{ appuser }}/apps/logs"
+    entity: "{{ appuser }}"
     etype: user
     permissions: rwx
     state: present
 
-- name: Set ACL for bitroidapps group on /bitroidapps/apps/logs
+- name: Set ACL for {{ appuser }} group on /{{ appuser }}/apps/logs
   ansible.posix.acl:
-    path: /bitroidapps/apps/logs
-    entity: bitroidapps
+    path: "/{{ appuser }}/apps/logs"
+    entity: "{{ appuser }}"
     etype: group
     permissions: rx
     state: present
 
-- name: Set ACL for bitroidapps user on /bitroidapps/apps/archivals
+- name: Set ACL for {{ appuser }} user on /{{ appuser }}/apps/archivals
   ansible.posix.acl:
-    path: /bitroidapps/apps/archivals
-    entity: bitroidapps
+    path: "/{{ appuser }}/apps/archivals"
+    entity: "{{ appuser }}"
     etype: user
     permissions: rwx
     state: present
 
-- name: Set ACL for bitroidapps group on /bitroidapps/apps/archivals
+- name: Set ACL for {{ appuser }} group on /{{ appuser }}/apps/archivals
   ansible.posix.acl:
-    path: /bitroidapps/apps/archivals
-    entity: bitroidapps
+    path: "/{{ appuser }}/apps/archivals"
+    entity: "{{ appuser }}"
     etype: group
     permissions: rx
     state: present
 
-- name: Set ACL for bitroidsupp user on /bitroidapps/apps/bin
+- name: Set ACL for {{ suppuser }} user on /{{ appuser }}/apps/bin
   ansible.posix.acl:
-    path: /bitroidapps/apps/bin
-    entity: bitroidsupp
+    path: "/{{ appuser }}/apps/bin"
+    entity: "{{ suppuser }}"
     etype: user
     permissions: rx
     state: present
 
-- name: Set ACL for bitroidsupp group on /bitroidapps/apps/bin
+- name: Set ACL for {{ suppuser }} group on /{{ appuser }}/apps/bin
   ansible.posix.acl:
-    path: /bitroidapps/apps/bin
-    entity: bitroidsupp
+    path: "/{{ appuser }}/apps/bin"
+    entity: "{{ suppuser }}"
     etype: group
     permissions: rx
     state: present
 
-- name: Set ACL for bitroidsupp user on /bitroidapps/apps/logs
+- name: Set ACL for {{ suppuser }} user on /{{ appuser }}/apps/logs
   ansible.posix.acl:
-    path: /bitroidapps/apps/logs
-    entity: bitroidsupp
+    path: "/{{ appuser }}/apps/logs"
+    entity: "{{ suppuser }}"
     etype: user
     permissions: rx
     state: present
 
-- name: Set ACL for bitroidsupp group on /bitroidapps/apps/logs
+- name: Set ACL for {{ suppuser }} group on /{{ appuser }}/apps/logs
   ansible.posix.acl:
-    path: /bitroidapps/apps/logs
-    entity: bitroidsupp
+    path: "/{{ appuser }}/apps/logs"
+    entity: "{{ suppuser }}"
     etype: group
     permissions: rx
     state: present
 
-- name: Set ACL for bitroidsupp user on /bitroidapps/apps/archivals
+- name: Set ACL for {{ suppuser }} user on /{{ appuser }}/apps/archivals
   ansible.posix.acl:
-    path: /bitroidapps/apps/archivals
-    entity: bitroidsupp
+    path: "/{{ appuser }}/apps/archivals"
+    entity: "{{ suppuser }}"
     etype: user
     permissions: rx
     state: present
 
-- name: Set ACL for bitroidsupp group on /bitroidapps/apps/archivals
+- name: Set ACL for {{ suppuser }} group on /{{ appuser }}/apps/archivals
   ansible.posix.acl:
-    path: /bitroidapps/apps/archivals
-    entity: bitroidsupp
+    path: "/{{ appuser }}/apps/archivals"
+    entity: "{{ suppuser }}"
     etype: group
     permissions: rx
     state: present

@@ -1,21 +1,21 @@
 ---
 - name: Create /apps/bin with mode 755
   ansible.builtin.file:
-    path: /bitroidapps/apps/bin
+    path: "/{{ appuser }}/apps/bin"
     state: directory
     mode: '0755'
     recurse: true
 
 - name: Create /apps/logs with mode 755
   ansible.builtin.file:
-    path: /bitroidapps/apps/logs
+    path: "/{{ appuser }}/apps/logs"
     state: directory
     mode: '0755'
     recurse: true
 
 - name: Create /apps/archivals with mode 755
   ansible.builtin.file:
-    path: /bitroidapps/apps/archivals
+    path: "/{{ appuser }}/apps/archivals"
     state: directory
     mode: '0755'
     recurse: true

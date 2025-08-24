@@ -5,3 +5,6 @@
 
 - name: Ensure to create user
   include_tasks: createuser.yml
+
+- name: Ensure to configure SSH
+  include_tasks: sshconfig.yml
