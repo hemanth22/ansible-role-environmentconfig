@@ -5,12 +5,3 @@
 
 - name: Ensure to create user
   include_tasks: createuser.yml
-
-- name: Ensure to configure SSH
-  include_tasks: sshconfig.yml
-
-- name: Ensure to create directory structure
-  include_tasks: pathconfig.yml
-
-- name: Ensure to grant permissions
-  include_tasks: perms.yml
